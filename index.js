@@ -1,13 +1,28 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
-}
+  let visitedValues = {};
+  
+  for (const num1 of array) {
+    const num2 = target - num1;
+    if (num2 in visitedValues)
+      return true;
+    visitedValues[num1] = true;
+  }
 
+  return false;
+}
 /* 
   Write the Big O time complexity of your function here
+  O(n)
 */
 
 /* 
   Add your pseudocode here
+
+  create a variable to hold the visited numbers in the array
+  iterate through the array to find the number that sums the 
+  first and the second number to give the target number
+  if found return true else false
 */
 
 /*
